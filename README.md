@@ -30,3 +30,32 @@ By addressing these questions, the dashboard aims to enable data-driven decision
 **2. Sessions.csv** – Logs details of user sessions such as timing, duration, device, and source for behavioral analysis.
 
 **3. Actions.csv** – Tracks user interactions across the funnel (page views, clicks, add-to-cart, purchases) to measure engagement and conversions.
+
+# Steps:
+
+**1. Load data into Power BI:**
+Open Power BI - Get Data - Load the three CSV files (Users.csv, Sessions.csv, Actions.csv) - Convert binary to tables and ensure proper headers.
+
+**2. Data Transformation:**
+1. Created an Action Date Table to analyze user interactions such as Page View, Product Click, Add to Cart, Purchase Completed across time for time-series analysis by Year, Month, Quarter, Day and Weekday.
+- DAX Formula:
+Action_Date_Table = CALENDAR(MIN(Actions[Action_Timestamp]),MAX(Actions[Action_Timestamp]))
+WeekDay = FORMAT('Action_Date_Table'[Date],"ddd")
+
+2. Created an Session Date Table to analyze user session across time for time-series analysis by Year, Quarter, Month, Weekday, and Day
+- DAX Formula:
+Session_Date_Table = CALENDAR(MIN(Sessions[Session_Start]),MAX(Sessions[Session_Start]))
+
+3. User Demographics Transformation:
+- Classify users into New and Returning categories.
+- Segment by Gender and Country for detailed behavioral analysis
+
+4. Device Classification:
+- Standardize device categories into Mobile, Tablet, and Desktop for consistent reporting.
+
+**3. Manage Relationship:**
+Create a schema relationship between tables
+<img width="1025" height="738" alt="Screenshot 2025-09-07 215652" src="https://github.com/user-attachments/assets/94350a92-42d3-44ae-8851-d4b4e6471ed5" />
+
+**4. Create Measures:**
+1. 
