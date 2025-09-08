@@ -63,3 +63,39 @@ Create a schema relationship between tables
 2. **Total Purchases** = 
 CALCULATE(COUNTROWS(Actions), 
     Actions[Action_Type] = "Purchase Completed")
+
+3. **Add to Cart** = 
+CALCULATE(COUNTROWS(Actions), Actions[Action_Type] = "Add to Cart")
+
+4. **Cart Abandonment %** = 
+DIVIDE([Add to Cart] - [Total Purchases], [Add to Cart])
+
+5. **Total Action** =
+COUNTROWS(Actions)
+
+6. **Conversion Rate(%)** = 
+DIVIDE([Total Purchases], [Total Session])
+
+7. **Bounce Rate%** = 
+DIVIDE ( [Bounced Sessions], COUNTROWS(Sessions), 0 )
+
+8. **Avg Duration (mins)** =
+AVERAGE(Sessions[Session_Duration(mins)])
+
+9. **Page View** =
+DIVIDE(COUNTROWS(FILTER(Actions,Actions[Action_Type]="Page View")),[Total Action]) 
+
+10. **Product Click** =
+DIVIDE(COUNTROWS(FILTER(Actions,Actions[Action_Type]="Product Click")),[Total Action]) 
+
+11. **Add to Cart Cnt** = 
+DIVIDE(COUNTROWS(FILTER(Actions,Actions[Action_Type]="Add to Cart")),[Total Action]) 
+
+12. **Tot Purchase** =
+DIVIDE(COUNTROWS(FILTER(Actions,Actions[Action_Type]="Purchase Completed")),[Total Action]) 
+
+13. **New Users (flag)** =
+CALCULATE(DISTINCTCOUNT(Users[User_ID]),Users[New_Visitor]="Yes") 
+
+13. **Returning Users (flag)** =
+CALCULATE( DISTINCTCOUNT( Users[User_ID] ), Users[New_Visitor] = "No" )
