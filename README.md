@@ -99,3 +99,30 @@ CALCULATE(DISTINCTCOUNT(Users[User_ID]),Users[New_Visitor]="Yes")
 
 13. **Returning Users (flag)** =
 CALCULATE( DISTINCTCOUNT( Users[User_ID] ), Users[New_Visitor] = "No" )
+
+**5. Create Dashboard:**
+<img width="1475" height="722" alt="Screenshot 2025-09-07 181540" src="https://github.com/user-attachments/assets/97a15d38-7ffe-4c15-97da-eadef17ba070" />
+
+**KPIs**
+1. Total Sessions (overall traffic)
+2. Total Purchases (conversion volume)
+3. Add-to-Cart Count (engagement metric)
+4. Cart Abandonment % (drop-off tracking)
+5. Conversion Rate % (funnel efficiency)
+6. Average Session Duration (user engagement quality)
+7. Bounce Rate % (retention indicator)
+
+**Visuals**
+1. Customer Journey Funnel (Page View → Product Click → Add to Cart → Purchase)
+2. User Type Distribution (New vs Returning users)
+3. Sessions Trend by Hour & Day (line and heatmap)
+4. Sessions by Traffic Source (Paid, Organic, Social, Email, Direct)
+5. Bounce Rate by Device Type (Mobile vs Tablet vs Desktop)
+6. Top Countries by User Activity (map visualization)
+
+**Slicers(Filters)**
+1. Country
+2. Gender
+3. Device Type
+4. Time-based Filters (Year, Month, Week, Day)
+5. User Type (New vs Returning)
