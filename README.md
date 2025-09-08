@@ -58,4 +58,8 @@ Create a schema relationship between tables
 <img width="1025" height="738" alt="Screenshot 2025-09-07 215652" src="https://github.com/user-attachments/assets/94350a92-42d3-44ae-8851-d4b4e6471ed5" />
 
 **4. Create Measures:**
-1. 
+1. **Total Session** = COUNTROWS(Sessions)
+
+2. **Total Purchases** = 
+CALCULATE(COUNTROWS(Actions), 
+    Actions[Action_Type] = "Purchase Completed")
