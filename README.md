@@ -55,6 +55,7 @@ Session_Date_Table = CALENDAR(MIN(Sessions[Session_Start]),MAX(Sessions[Session_
 
 **3. Manage Relationship:**
 Create a schema relationship between tables
+
 <img width="1025" height="738" alt="Screenshot 2025-09-07 215652" src="https://github.com/user-attachments/assets/94350a92-42d3-44ae-8851-d4b4e6471ed5" />
 
 **4. Create Measures:**
@@ -101,6 +102,7 @@ CALCULATE(DISTINCTCOUNT(Users[User_ID]),Users[New_Visitor]="Yes")
 CALCULATE( DISTINCTCOUNT( Users[User_ID] ), Users[New_Visitor] = "No" )
 
 **5. Create Dashboard:**
+
 <img width="1475" height="722" alt="Screenshot 2025-09-07 181540" src="https://github.com/user-attachments/assets/97a15d38-7ffe-4c15-97da-eadef17ba070" />
 
 **KPIs**
